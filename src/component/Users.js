@@ -11,7 +11,7 @@ const Users = () => {
 
             axios({
                 method: 'get',
-                url: 'http://localhost:8000/api/users',
+                url: 'https://gold-sweatsuit.cyclic.app/api/users',
             })
             .then(res => {
                 console.log(res);

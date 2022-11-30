@@ -29,7 +29,7 @@ function App() {
     event.preventDefault();
     await axios({
       method: 'post',
-      url: 'http://localhost:8000/api/signup',
+      url: 'https://gold-sweatsuit.cyclic.app/api/signup',
       data: formData
     })
     .then(res => {
