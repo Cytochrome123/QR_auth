@@ -24,11 +24,18 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <!-- <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js " rel="nofollow "></script> -->
+    <!-- <script src="./assets/js/scanner.min.js"></script> -->
+    <!-- <script src="./assets/js/html5-qrcode.min.js"></script> -->
+
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="reader"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -40,4 +47,37 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
+  <script type="text/javascript">
+    // '<span class="result">' +  + '</span>'
+    function onScanSuccess(qrCodeMessage) {
+
+        document.getElementById('result').innerHTML = '<input type="text" class="result form-control mb-3" name="fName" value=' + qrCodeMessage + 'placeholder=' + qrCodeMessage + '></input>' ;
+
+        html5QrcodeScanner.clear();
+    }
+
+    function onScanError(errorMessage) {
+        //handle scan error
+    }
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", {
+            fps: 10,
+            qrbox: 250,
+        });
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+    // var html5QrcodeScanner = new Html5QrcodeScanner(
+    // "reader", { fps: 10, qrbox: 250 });
+        
+    // function onScanSuccess(decodedText, decodedResult) {
+    //     // Handle on success condition with the decoded text or result.
+    //     console.log(`Scan result: ${decodedText}`, decodedResult);
+    //     // ...
+    //     html5QrcodeScanner.clear();
+    //     // ^ this will stop the scanner (video feed) and clear the scan area.
+    // }
+
+    // html5QrcodeScanner.render(onScanSuccess);
+</script>
 </html>
