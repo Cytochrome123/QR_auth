@@ -18,7 +18,7 @@ class Scanner2 extends Component {
   }
   handleError(err){
     console.error(err)
-  }
+  };
   render(){
     const previewStyle = {
       height: 240,
