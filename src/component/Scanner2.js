@@ -12,13 +12,14 @@ class Scanner2 extends Component {
     this.handleScan = this.handleScan.bind(this)
   }
   handleScan(data){
+    console.log(data)
     this.setState({
-      result: data,
+      result: data.text,
     })
   }
   handleError(err){
     console.error(err)
-  };
+  }
   render(){
     const previewStyle = {
       height: 240,

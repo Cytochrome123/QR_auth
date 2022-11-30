@@ -15,7 +15,7 @@ const Scanner = () => {
                 
             </div>
             <div className="col-lg-6 col-md-12">
-                <h4>SCAN RESULT</h4>
+                <h4>SCANNN RESULT</h4>
                 <div id="result">Result Here</div>
             </div>
         </div>,

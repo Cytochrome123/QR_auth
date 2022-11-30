@@ -1,36 +1,96 @@
-// import {Html5QrcodeScanner} from "html5-qrcode"
+
+import jwtDecode from 'jwt-decode';
+import { useEffect, useRef, useState } from "react";
+import axios from 'axios';
+import { Table } from 'react-bootstrap';
 
 const Scanner1 = () => {
 
-    const style = {
-        width: '400px'
-    };
+    const resultRef = useRef();
+    const ref = useRef(true);
 
-    // var html5QrcodeScanner = new Html5QrcodeScanner(
-    // "reader", { fps: 10, qrbox: 250 });
-        
-    // function onScanSuccess(decodedText, decodedResult) {
-    //     // Handle on success condition with the decoded text or result.
-    //     console.log(`Scan result: ${decodedText}`, decodedResult);
-    //     // ...
-    //     html5QrcodeScanner.clear();
-    //     // ^ this will stop the scanner (video feed) and clear the scan area.
-    // }
+    const [data, setData] = useState({
+        msg: '',
+        collected: []
+    })
 
-    // html5QrcodeScanner.render(onScanSuccess);
+    useEffect(() => {
+        if(ref.current) {
+            load()
+        }  
+        return () => ref.current = false;
+    })
+console.log(data.collected)
+    const Add = (event) => {
+        event.preventDefault();
+        console.log(resultRef.current.value)
+        const decoded = jwtDecode(resultRef.current.value);
+        console.log(decoded)
+
+        axios({
+            method: 'patch',
+            url: 'http://localhost:8000/api/souvenier',
+            data: decoded
+        })
+        .then(res => {
+            console.log(res.data.msg)
+            setData(prev => ({
+                ...prev,
+                msg: res.data.msg
+            }))
+            load();
+        })
+        .catch(err => {
+            console.log(err.data.msg)
+        })
+    }
+
+    function load(){
+        axios({
+            method: 'get',
+            url: 'http://localhost:8000/api/collected'
+        })
+        .then(res => {
+            console.log(res)
+            setData(prev => ({
+                ...prev,
+                collected: res.data.data 
+            }))
+        })
+    }
+
     return (
-        <div className="form-group col-lg-6 col-md-12">
-            <div className="col-lg-6 col-md-9">
-                <div className="text-center"><h3>Scanner</h3></div>
-                <div style={style} id="reader"></div>
-                
-                <div className="col" style={{padding:'30px'}}></div>
-                
-            </div>
-            <div className="col-lg-6 col-md-12">
-                <h4>SCAN RESULT</h4>
-                <div id="result">Result Here</div>
-            </div>
+        <div>
+
+            <form onSubmit={Add}>
+
+                {/* <div id="reader"></div> */}
+                <div className="col-lg-6 col-md-12">
+                    <h4>SCANNN RESULT</h4>
+                    {/* <div id="result">Result Here</div> */}
+                </div>
+                    <input type='text' ref={resultRef} name='result' placeholder="Result"  id='result'/>
+                    <button type='submit' >Add</button>
+            </form>
+{data.msg}
+            <Table striped bordered hover variant="dark">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.collected.map((collectd,index) => (
+                        <tr key={index} >
+                            <td>{index + 1}</td>
+                            <td>{collectd.firstName}</td>
+                            <td> {collectd.email} </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
         </div>
     )
 }
