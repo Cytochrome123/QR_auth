@@ -4,12 +4,13 @@ import logo from '../logo.svg';
 
 import axios from 'axios';
 import Navbarr from './navbar';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import {BASEURL} from '../App';
 
 
 const SignUp = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
     const [formData, setFormData] = useState({
       firstName: '',
       lastName: '',
@@ -29,7 +30,7 @@ const SignUp = () => {
         event.preventDefault();
         await axios({
             method: 'post',
-            url: 'https://gold-sweatsuit.cyclic.app/api/signup',
+            url: `${BASEURL}/signup`,
             data: formData
         })
         .then(res => {

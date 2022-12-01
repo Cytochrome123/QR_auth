@@ -5,6 +5,7 @@ import axios from 'axios';
 import cookies from 'js-cookie'
 
 import Navbarr from './navbar';
+import {BASEURL} from '../App'
 
 const Login = () => {
 
@@ -26,8 +27,7 @@ const Login = () => {
           event.preventDefault();
           await axios({
               method: 'post',
-              url: 'https://gold-sweatsuit.cyclic.app/api/login',
-            // url: 'http://localhost:8000/api/login',
+              url: `${BASEURL}/login`,
               data: formData
           })
           .then(res => {

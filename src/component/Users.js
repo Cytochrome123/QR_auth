@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import axios from 'axios'
 
 import Navbarr from './navbar';
+import {BASEURL} from '../App'
 
 
 const Users = () => {
@@ -13,7 +14,7 @@ const Users = () => {
 
             axios({
                 method: 'get',
-                url: 'https://gold-sweatsuit.cyclic.app/api/users',
+                url: `${BASEURL}/users`
             })
             .then(res => {
                 console.log(res);

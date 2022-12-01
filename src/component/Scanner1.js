@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Table } from 'react-bootstrap';
 
 import Navbarr from './navbar';
+import {BASEURL} from '../App';
 
 const Scanner1 = () => {
 
@@ -31,7 +32,7 @@ console.log(data.collected)
 
         axios({
             method: 'patch',
-            url: 'https://gold-sweatsuit.cyclic.app/api/souvenier',
+            url: `${BASEURL}/souvenier`,
             data: decoded
         })
         .then(res => {
@@ -50,7 +51,7 @@ console.log(data.collected)
     function load(){
         axios({
             method: 'get',
-            url: 'https://gold-sweatsuit.cyclic.app/api/collected'
+            url: `${BASEURL}/collected`
         })
         .then(res => {
             console.log(res)

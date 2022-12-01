@@ -11,6 +11,7 @@ import Scanner2 from './component/Scanner2';
 import Profile from './component/Profile';
 
 export const BASEURL = 'https://gold-sweatsuit.cyclic.app/api';
+// export const BASEURL = 'http://localhost:8000/api'
 
 function App() {
 
@@ -20,13 +21,13 @@ function App() {
       
       <Router>
         <Routes>
-          <Route exact path='/' element={<SignUp />} />
-          <Route exact path='/login' element={<Login />} />
-          <Route exact path='/profile' element={<Profile />} />
-          <Route exact path='/users' element={<Users />} />
-          <Route exact path='/scan' element={<Scanner />} />
-          <Route exact path='/scn' element={<Scanner1 />} />
-          <Route exact path='/scann' element={<Scanner2 />} />
+          <Route path='/' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/scan' element={<Scanner />} />
+          <Route path='/scn' element={<Scanner1 />} />
+          <Route path='/scann' element={<Scanner2 />} />
         </Routes>
       </Router>
     </div>

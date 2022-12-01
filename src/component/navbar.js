@@ -11,6 +11,7 @@ const Navbarr = () => {
         authenticated: false,
 		firstName: '',
 		lastName: '',
+        email: '',
 		role: '',
     })
     const ref = useRef(true);
@@ -20,7 +21,8 @@ const Navbarr = () => {
         if (ref.current) {
             const token = cookies.get('token')
             if (token) {
-            const decoded = jwtDecode(token);
+                const decoded = jwtDecode(token);
+                // console.log(decoded)
 
                 
                 setAuthenticatedUser(prev => ({
@@ -78,10 +80,6 @@ const Navbarr = () => {
                 <>
                     <Nav.Link href="#">All Users</Nav.Link>
                     <Nav.Link href="#">Scan</Nav.Link>
-                </>
-            ) : authenticatedUser.role === 'student' ? (
-                <>
-                    <Nav.Link href="#">Exami</Nav.Link>
                 </>
             ) : authenticatedUser.role}
 

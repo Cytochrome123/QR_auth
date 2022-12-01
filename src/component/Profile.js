@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import cookies from 'js-cookie'
 
 import Navbarr from './navbar';
+import {BASEURL} from '../App';
 
 const Profile = () => {
 
@@ -24,7 +25,7 @@ const Profile = () => {
             const token = cookies.get('token');
             axios({
                 method: 'get',
-                url: 'https://gold-sweatsuit.cyclic.app/api/profile',
+                url: `${BASEURL}/profile`,
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`
