@@ -33,7 +33,7 @@ console.log(data.collected)
 
         axios({
             method: 'patch',
-            url: `${BASEURL}/souvenier/${launch}`,
+            url: `${BASEURL}/souvenier1`,
             data: decoded
         })
         .then(res => {

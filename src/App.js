@@ -10,6 +10,9 @@ import Scanner1 from './component/Scanner1';
 import Scanner2 from './component/Scanner2';
 import Profile from './component/Profile';
 import { useState } from 'react';
+import Launch1 from './component/Launch1';
+import Launch2 from './component/Launch2';
+
 
 export const BASEURL = 'https://gold-sweatsuit.cyclic.app/api';
 // export const BASEURL = 'http://localhost:8000/api'
@@ -30,6 +33,8 @@ function App() {
           <Route path='/scan' element={<Scanner open={isOpen} />} />
           <Route path='/scn' element={<Scanner1 />} />
           <Route path='/scann' element={<Scanner2 />} />
+          <Route path='/scn/1' element={<Launch1 />} />
+          <Route path='/scn/2' element={<Launch2 />} />
         </Routes>
       </Router>
     </div>
