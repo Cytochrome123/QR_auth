@@ -16,6 +16,7 @@ const SignUp = () => {
       email: '',
       password: ''
     })
+    const [text, setText] = useState('');
 
     const handleChange = (event) => {
       setFormData(prev => ({
@@ -33,7 +34,7 @@ const SignUp = () => {
         })
         .then(res => {
             console.log(res.data.msg)
-            navigate('/');
+            setText(res.data.msg)
         })
     }
 
@@ -60,6 +61,7 @@ const SignUp = () => {
               <input type='password' name='password' placeholder='Password' value={formData.password} onChange={handleChange} />
               <button type='submit'>Submit</button>
             </form>
+            {text}
       </header>
     )
 }

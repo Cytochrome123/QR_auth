@@ -10,6 +10,8 @@ import Scanner1 from './component/Scanner1';
 import Scanner2 from './component/Scanner2';
 import Profile from './component/Profile';
 
+export const BASEURL = 'https://gold-sweatsuit.cyclic.app/api';
+
 function App() {
 
   
