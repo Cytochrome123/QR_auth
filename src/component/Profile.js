@@ -54,6 +54,7 @@ const Profile = () => {
         <div>
             <Navbarr />
             <img src={profile.code} alt='qr'/>
+            <div>{profile.firstName}{profile.lastName}</div>
             <div>{profile.email}</div>
         </div>
     )

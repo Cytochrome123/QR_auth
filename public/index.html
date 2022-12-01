@@ -71,6 +71,7 @@
     //     });
     // html5QrcodeScanner.render(onScanSuccess, onScanError);
 
+    console.log(Html5QrcodeScanner)
     var html5QrcodeScanner = new Html5QrcodeScanner(
     "reader", { fps: 10, qrbox: 250 });
         
@@ -80,10 +81,10 @@
         // document.getElementById('result').outerHTML = '<input type="text" className="result form-control mb-3" name="fName" value=' + decodedText + 'placeholder=' + decodedText + '></input>' ;
         // ...
         document.getElementById('result').setAttribute('value', decodedText)
-        html5QrcodeScanner.clear();
+        // html5QrcodeScanner.clear();
         // ^ this will stop the scanner (video feed) and clear the scan area.
     }
 
     html5QrcodeScanner.render(onScanSuccess);
-</script>
+  </script>
 </html>

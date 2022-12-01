@@ -66,7 +66,7 @@ const Navbarr = () => {
 
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" className='mb-5'>
         <Container>
           <Navbar.Brand href="/">GDG</Navbar.Brand>
           <Nav className="text-right">
