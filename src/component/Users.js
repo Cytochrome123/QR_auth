@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 import axios from 'axios'
 
+import Navbarr from './navbar';
+
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -23,12 +25,15 @@ const Users = () => {
     })
 
     return (
-        <div>{users.map(user => (
-            <div>
-                <img src={user.code} alt=""/>
-                <div>{user.firstName}</div>
-            </div>
-        ))}</div>
+        <div>
+            <Navbarr />
+            {users.map(user => (
+                <div>
+                    <img src={user.code} alt=""/>
+                    <div>{user.firstName}</div>
+                </div>
+            ))}
+        </div>
     )
 }
 

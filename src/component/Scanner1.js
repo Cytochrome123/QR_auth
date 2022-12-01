@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 
+import Navbarr from './navbar';
+
 const Scanner1 = () => {
 
     const resultRef = useRef();
@@ -29,7 +31,7 @@ console.log(data.collected)
 
         axios({
             method: 'patch',
-            url: 'http://localhost:8000/api/souvenier',
+            url: 'https://gold-sweatsuit.cyclic.app/api/souvenier',
             data: decoded
         })
         .then(res => {
@@ -48,7 +50,7 @@ console.log(data.collected)
     function load(){
         axios({
             method: 'get',
-            url: 'http://localhost:8000/api/collected'
+            url: 'https://gold-sweatsuit.cyclic.app/api/collected'
         })
         .then(res => {
             console.log(res)
@@ -61,7 +63,7 @@ console.log(data.collected)
 
     return (
         <div>
-
+            <Navbarr />
             <form onSubmit={Add}>
 
                 {/* <div id="reader"></div> */}
