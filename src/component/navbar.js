@@ -70,7 +70,7 @@ const Navbarr = () => {
           <Nav className="text-right">
             {authenticatedUser.authenticated ? 
                 <Nav.Link href="" onClick={logOutUser}>Logout</Nav.Link> 
-                : <Nav.Link href="/login">Login</Nav.Link>
+                : <a href="/login">Login</a>
             }
             <Nav.Link href="/">Sign up</Nav.Link>
 
