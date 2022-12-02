@@ -122,7 +122,7 @@ class Scanner extends Component{
                 <div className='text-left'>
 
                     <a onClick={this.scrollToBottom}>Down</a>    
-                    <i className='fa fa-arrow-down'></i>  
+                    <i className='fa fa-arrow-down' onClick={this.scrollToBottom}></i>  
                     <i className="bi bi-arrow-bar-down" onClick={this.scrollToBottom}></i> 
                 </div>
                 <Table striped bordered hover variant="dark">

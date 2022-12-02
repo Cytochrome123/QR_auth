@@ -7,7 +7,9 @@ import './component/Scanner'
 import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
 // import '../node_modules/html5-qrcode/html5-qrcode.min.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

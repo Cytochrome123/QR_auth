@@ -56,11 +56,11 @@ class Launch1 extends Component{
     }
 
     componentDidMount() {
-        console.log(Html5QrcodeScanner)
+        // console.log(Html5QrcodeScanner)
         // this.html5QrcodeScanner = new Html5QrcodeScanner(
         //     "reader", { fps: 10, qrbox: 250 });
         // this.html5QrcodeScanner.render(this.onScanSuccess);
-        console.log(this.resultRef);
+        // console.log(this.resultRef);
         this.load();
     }
 

@@ -70,6 +70,17 @@ const Navbarr = () => {
         <Container>
           <Navbar.Brand href="/">DevFest Ibadan 2022  </Navbar.Brand>
           <Nav className="text-right">
+            
+
+            {authenticatedUser.role === 'admin' ? (
+                <>
+                    <Nav.Link href="/users">All Users</Nav.Link>
+                    <Nav.Link href="/scn">Scan</Nav.Link>
+                </>
+            ) : authenticatedUser.role}
+
+            <Nav.Link href="/profile">{authenticatedUser.firstName}</Nav.Link>
+
             {authenticatedUser.authenticated ? 
                 <Nav.Link href="" onClick={logOutUser}>Logout</Nav.Link> 
                 : <Nav.Link href="/login">Login</Nav.Link>
@@ -79,15 +90,6 @@ const Navbarr = () => {
                 <div></div> 
                 : <Nav.Link href="/">Sign up</Nav.Link>
             }
-
-            {authenticatedUser.role === 'admin' ? (
-                <>
-                    <Nav.Link href="/users">All Users</Nav.Link>
-                </>
-            ) : authenticatedUser.role}
-
-            <Nav.Link href="/profile">{authenticatedUser.firstName}</Nav.Link>
-
           </Nav>
         </Container>
       </Navbar>
