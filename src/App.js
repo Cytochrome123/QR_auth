@@ -12,7 +12,7 @@ import Profile from './component/Profile';
 import { useState } from 'react';
 import Launch1 from './component/Launch1';
 import Launch2 from './component/Launch2';
-
+import Launch3 from './component/Launch3';
 
 export const BASEURL = 'https://gold-sweatsuit.cyclic.app/api';
 // export const BASEURL = 'http://localhost:8000/api'
@@ -35,6 +35,7 @@ function App() {
           <Route path='/scann' element={<Scanner2 />} />
           <Route path='/scn/1' element={<Launch1 />} />
           <Route path='/scn/2' element={<Launch2 />} />
+          <Route path='/scn/3' element={<Launch3 />} />
         </Routes>
       </Router>
     </div>

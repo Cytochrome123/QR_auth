@@ -56,6 +56,7 @@ const Profile = () => {
             <img src={profile.code} alt='qr'/>
             <div>{profile.firstName}{profile.lastName}</div>
             <div>{profile.email}</div>
+            <div>{profile.category}</div>
         </div>
     )
 }

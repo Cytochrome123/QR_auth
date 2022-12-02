@@ -51,7 +51,7 @@ console.log(data.collected)
     function load(){
         axios({
             method: 'get',
-            url: `${BASEURL}/collected`
+            url: `${BASEURL}/collected2`
         })
         .then(res => {
             console.log(res)

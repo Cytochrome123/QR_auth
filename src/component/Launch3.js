@@ -1,4 +1,3 @@
-
 import jwtDecode from 'jwt-decode';
 import { useEffect, useRef, useState } from "react";
 import axios from 'axios';
@@ -6,7 +5,7 @@ import { Table } from 'react-bootstrap';
 
 import {BASEURL} from '../App';
 
-const Launch1 = ({launch}) => {
+const Launch3 = ({launch}) => {
 
     const resultRef = useRef();
     const ref = useRef(true);
@@ -33,7 +32,7 @@ console.log(data.collected)
 
         axios({
             method: 'patch',
-            url: `${BASEURL}/souvenier1`,
+            url: `${BASEURL}/souvenier3`,
             data: decoded
         })
         .then(res => {
@@ -52,7 +51,7 @@ console.log(data.collected)
     function load(){
         axios({
             method: 'get',
-            url: `${BASEURL}/collected1`
+            url: `${BASEURL}/collected3`
         })
         .then(res => {
             console.log(res)
@@ -100,4 +99,4 @@ console.log(data.collected)
     )
 }
 
-export default Launch1;
+export default Launch3;

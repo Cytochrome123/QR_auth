@@ -68,7 +68,7 @@ const Navbarr = () => {
     return (
         <Navbar bg="dark" variant="dark" className='mb-5'>
         <Container>
-          <Navbar.Brand href="/">GDG</Navbar.Brand>
+          <Navbar.Brand href="/">DevFest Ibadan 2022</Navbar.Brand>
           <Nav className="text-right">
             {authenticatedUser.authenticated ? 
                 <Nav.Link href="" onClick={logOutUser}>Logout</Nav.Link> 
@@ -78,8 +78,7 @@ const Navbarr = () => {
 
             {authenticatedUser.role === 'admin' ? (
                 <>
-                    <Nav.Link href="#">All Users</Nav.Link>
-                    <Nav.Link href="#">Scan</Nav.Link>
+                    <Nav.Link href="/users">All Users</Nav.Link>
                 </>
             ) : authenticatedUser.role}
 
