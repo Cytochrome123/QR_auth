@@ -74,7 +74,11 @@ const Navbarr = () => {
                 <Nav.Link href="" onClick={logOutUser}>Logout</Nav.Link> 
                 : <Nav.Link href="/login">Login</Nav.Link>
             }
-            <Nav.Link href="/">Sign up</Nav.Link>
+
+            {authenticatedUser.authenticated ? 
+                <div></div> 
+                : <Nav.Link href="/">Sign up</Nav.Link>
+            }
 
             {authenticatedUser.role === 'admin' ? (
                 <>
