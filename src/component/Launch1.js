@@ -92,7 +92,7 @@ console.log(data.collected)
         <div>     
             <div className='text-left'>
 
-                <a onClick={scrollToBottom}>Scroll Down</a>       
+                <a onClick={scrollToBottom}>Down</a>       
             </div>
             <form onSubmit={Add}>
 
