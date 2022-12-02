@@ -16,7 +16,7 @@ const Launch1 = ({launch}) => {
         collected: []
     })
 
-    
+    const [visible, setVisible] = useState(true)
 
     useEffect(() => {
         if(ref.current) {
@@ -25,6 +25,29 @@ const Launch1 = ({launch}) => {
         return () => ref.current = false;
     })
 console.log(data.collected)
+
+
+    const toggleVisible = () => { 
+        const scrolled = document.documentElement.scrollTop; 
+        if (scrolled > 0){ 
+        setVisible(false) 
+        }  
+        else if (scrolled <= 0){ 
+        setVisible(true) 
+        } 
+    }; 
+
+    const scrollToBottom = () =>{ 
+        window.scrollTo({ 
+          top: document.documentElement.scrollHeight, 
+          behavior: 'auto'
+          /* you can also use 'auto' behaviour 
+             in place of 'smooth' */
+        }); 
+      }; 
+        
+      window.addEventListener('scroll', toggleVisible);
+
     const Add = (event) => {
         event.preventDefault();
         console.log(resultRef.current.value)
@@ -66,7 +89,11 @@ console.log(data.collected)
     
 
     return (
-        <div>            
+        <div>     
+            <div className='text-left'>
+
+                <a onClick={scrollToBottom}>Scroll Down</a>       
+            </div>
             <form onSubmit={Add}>
 
                 {/* <div id="reader"></div> */}
