@@ -68,7 +68,7 @@ const Navbarr = () => {
     return (
         <Navbar bg="dark" variant="dark" className='mb-5'>
         <Container>
-          <Navbar.Brand href="/">DevFest Ibadan 2022</Navbar.Brand>
+          <Navbar.Brand href="/">DevFest Ibadan 2022 <img src='https://th.bing.com/th/id/OIP.AEx5PZEdueqC5moLuwkUCgHaCr?pid=ImgDet&rs=1' /> </Navbar.Brand>
           <Nav className="text-right">
             {authenticatedUser.authenticated ? 
                 <Nav.Link href="" onClick={logOutUser}>Logout</Nav.Link> 

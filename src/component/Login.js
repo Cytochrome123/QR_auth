@@ -35,7 +35,7 @@ const Login = () => {
               cookies.set('token', res.data.token);
 
               if(res.data.role === 'admin') {
-                navigate('/users');
+                navigate('/scn');
               } else {
                 navigate('/profile');
               }
